@@ -78,7 +78,7 @@
                             <input id="remember" v-model="form.remember" type="checkbox" class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-stone-300 rounded cursor-pointer" />
                             <label for="remember" class="ml-2 block text-sm text-stone-700 cursor-pointer"> Remember me </label>
                         </div>
-                        <a href="#" class="text-sm font-medium text-amber-600 hover:text-amber-700 transition-colors"> Forgot password? </a>
+                        <NuxtLink to="/forgot-password" class="text-sm font-medium text-amber-600 hover:text-amber-700 transition-colors"> Forgot password? </NuxtLink>
                     </div>
 
                     <!-- Submit Button -->
