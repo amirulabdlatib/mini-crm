@@ -1,12 +1,6 @@
 <template>
     <div class="bg-linear-to-br from-stone-50 via-amber-50/30 to-orange-50/20 py-32">
-        <!-- Background decorative elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-amber-200/30 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="w-full max-w-md relative z-10">
+        <div class="w-full max-w-md mx-auto relative z-10">
             <!-- Logo Section -->
             <div class="text-center mb-8">
                 <div class="inline-flex items-center justify-center mb-4">
