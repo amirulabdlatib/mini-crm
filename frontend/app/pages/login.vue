@@ -138,6 +138,10 @@
 </template>
 
 <script setup>
+    useHead({
+        title: "Mini CRM | Login",
+    });
+
     definePageMeta({
         layout: "public",
     });
