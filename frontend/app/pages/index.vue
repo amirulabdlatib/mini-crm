@@ -2,6 +2,7 @@
     <Hero />
     <Features />
     <Testimonials />
+    <ContactUs />
 </template>
 
 <script setup>
