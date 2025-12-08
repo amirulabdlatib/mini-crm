@@ -21,9 +21,7 @@
                         <a
                             href="#features"
                             class="px-8 py-4 border-2 border-stone-300 text-stone-700 rounded-xl font-semibold hover:border-amber-600 hover:text-amber-600 transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
+                            <Icon name="lucide:file-text" class="h-5 w-5" />
                             View Features
                         </a>
                     </div>
@@ -45,13 +43,7 @@
                     <div class="absolute top-0 right-0 w-72 h-96 bg-linear-to-br from-amber-400 to-orange-500 rounded-3xl transform rotate-6 hover:rotate-3 transition-transform duration-500 shadow-2xl">
                         <div class="p-6 text-white">
                             <div class="w-12 h-12 bg-white/20 rounded-xl mb-4 backdrop-blur-sm flex items-center justify-center">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                                </svg>
+                                <Icon name="lucide:kanban" class="w-7 h-7 text-white" />
                             </div>
                             <h3 class="text-2xl font-bold mb-2">Pipeline View</h3>
                             <p class="text-white/80">Drag & drop deals through stages</p>
@@ -62,13 +54,7 @@
                     <div class="absolute top-20 left-0 w-72 h-96 bg-linear-to-br from-stone-700 to-stone-900 rounded-3xl transform -rotate-6 hover:rotate-0 transition-transform duration-500 shadow-2xl">
                         <div class="p-6 text-white">
                             <div class="w-12 h-12 bg-white/20 rounded-xl mb-4 backdrop-blur-sm flex items-center justify-center">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
+                                <Icon name="lucide:users" class="w-7 h-7 text-white" />
                             </div>
                             <h3 class="text-2xl font-bold mb-2">Lead Tracking</h3>
                             <p class="text-white/80">Never miss a follow-up</p>
@@ -79,9 +65,7 @@
                     <div class="absolute bottom-0 right-20 w-64 h-80 bg-linear-to-br from-emerald-400 to-teal-500 rounded-3xl transform rotate-3 hover:-rotate-2 transition-transform duration-500 shadow-2xl">
                         <div class="p-6 text-white">
                             <div class="w-12 h-12 bg-white/20 rounded-xl mb-4 backdrop-blur-sm flex items-center justify-center">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
+                                <Icon name="lucide:bar-chart-3" class="w-7 h-7 text-white" />
                             </div>
                             <h3 class="text-2xl font-bold mb-2">Analytics</h3>
                             <p class="text-white/80">Track your growth</p>
