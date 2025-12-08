@@ -23,12 +23,12 @@
                             Features
                             <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-amber-600 transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></span>
                         </a>
-                        <a href="#pricing" class="relative px-4 py-2 text-sm font-medium text-stone-600 hover:text-amber-600 transition-colors duration-200 group">
-                            Pricing
+                        <a href="#testimonials" class="relative px-4 py-2 text-sm font-medium text-stone-600 hover:text-amber-600 transition-colors duration-200 group">
+                            Testimonials
                             <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-amber-600 transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></span>
                         </a>
-                        <a href="#about" class="relative px-4 py-2 text-sm font-medium text-stone-600 hover:text-amber-600 transition-colors duration-200 group">
-                            About
+                        <a href="#contact" class="relative px-4 py-2 text-sm font-medium text-stone-600 hover:text-amber-600 transition-colors duration-200 group">
+                            Contact
                             <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-amber-600 transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></span>
                         </a>
                     </div>
@@ -64,8 +64,8 @@
                     leave-to-class="opacity-0 -translate-y-4">
                     <div v-if="mobileMenuOpen" class="md:hidden py-4 space-y-3 border-t border-stone-200/50">
                         <a @click="mobileMenuOpen = false" href="#features" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> Features </a>
-                        <a @click="mobileMenuOpen = false" href="#pricing" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> Pricing </a>
-                        <a @click="mobileMenuOpen = false" href="#about" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> About </a>
+                        <a @click="mobileMenuOpen = false" href="#testimonials" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> Testimonials </a>
+                        <a @click="mobileMenuOpen = false" href="#contact" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> Contact </a>
                         <div class="pt-4 space-y-3 border-t border-stone-200/50">
                             <button class="w-full px-4 py-2.5 text-sm font-medium text-stone-700 hover:text-amber-600 hover:bg-stone-50 rounded-lg transition-all duration-200 text-center">Sign In</button>
                             <button
@@ -94,10 +94,17 @@
                         <p class="text-xl text-stone-600 leading-relaxed">A lightweight CRM that helps small teams track leads, manage deals, and close sales faster. No bloat, just what you need.</p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <button class="group px-8 py-4 bg-amber-600 text-white rounded-xl font-semibold hover:bg-amber-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
-                                Start Free Trial
+                                Get Started for Free
                                 <span class="inline-block ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                             </button>
-                            <button class="px-8 py-4 border-2 border-stone-300 text-stone-700 rounded-xl font-semibold hover:border-amber-600 hover:text-amber-600 transform hover:scale-105 transition-all duration-300">Watch Demo</button>
+                            <a
+                                href="#features"
+                                class="px-8 py-4 border-2 border-stone-300 text-stone-700 rounded-xl font-semibold hover:border-amber-600 hover:text-amber-600 transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                                View Features
+                            </a>
                         </div>
                         <div class="flex items-center space-x-8 pt-4">
                             <div class="flex -space-x-3">
@@ -254,13 +261,132 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 px-6 bg-stone-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-stone-900 mb-4">Loved by Businesses</h2>
+                    <p class="text-xl text-stone-600">Don't just take our word for it</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-6">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Sarah K." class="w-12 h-12 rounded-full mr-4 border-2 border-amber-200" />
+                            <div>
+                                <h4 class="font-semibold text-stone-900">Sarah K.</h4>
+                                <p class="text-sm text-amber-600">Small Business Owner</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 mb-4">"MiniCRM has transformed how we manage our sales pipeline. The interface is so intuitive that my team was up and running in minutes!"</p>
+                        <div class="flex text-amber-400">★★★★★</div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-6">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Ahmad R." class="w-12 h-12 rounded-full mr-4 border-2 border-amber-200" />
+                            <div>
+                                <h4 class="font-semibold text-stone-900">Ahmad R.</h4>
+                                <p class="text-sm text-amber-600">Sales Director</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 mb-4">"The best CRM solution for Malaysian businesses. The local support is outstanding and the features are perfectly tailored for our market needs."</p>
+                        <div class="flex text-amber-400">★★★★★</div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-6">
+                            <img src="https://i.pravatar.cc/150?img=8" alt="Mei Ling" class="w-12 h-12 rounded-full mr-4 border-2 border-amber-200" />
+                            <div>
+                                <h4 class="font-semibold text-stone-900">Mei Ling</h4>
+                                <p class="text-sm text-amber-600">Marketing Manager</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 mb-4">"We've tried many CRMs but none as user-friendly as this. The mobile app keeps our team productive even on the go. Highly recommended!"</p>
+                        <div class="flex text-amber-400">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-stone-900 mb-4">Get in Touch</h2>
+                    <p class="text-xl text-stone-600">Have questions? We'd love to hear from you.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Contact Form -->
+                    <div class="bg-stone-50 p-8 rounded-2xl shadow-lg">
+                        <form @submit.prevent="handleSubmit" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-stone-700 mb-1">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    v-model="form.name"
+                                    required
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
+                                    placeholder="Your name" />
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-stone-700 mb-1">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    v-model="form.email"
+                                    required
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
+                                    placeholder="your.email@example.com" />
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-stone-700 mb-1">Message</label>
+                                <textarea
+                                    id="message"
+                                    v-model="form.message"
+                                    rows="4"
+                                    required
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
+                                    placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3.5 bg-amber-600 text-white font-semibold rounded-xl hover:bg-amber-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-amber-500/20">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Lottie Animation -->
+                    <div class="hidden lg:block">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-linear-to-br from-amber-100 to-orange-100 rounded-2xl transform rotate-2"></div>
+                            <div class="relative">
+                                <ClientOnly>
+                                    <DotLottieVue style="height: 400px; width: 400px" autoplay loop src="https://lottie.host/0e09e516-7c30-4aa3-8705-b2b0fd331990/ZTwksOYiKy.lottie" class="mx-auto" />
+                                </ClientOnly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="py-12 px-6 bg-stone-900 text-stone-400">
             <div class="max-w-7xl mx-auto">
                 <div class="grid md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <div class="flex items-center space-x-2 mb-4">
-                            <div class="w-8 h-8 bg-amber-600 rounded-lg transform rotate-45"></div>
+                        <div class="flex items-center space-x-2 mb-4 group cursor-pointer">
+                            <div class="relative">
+                                <div class="w-8 h-8 bg-amber-600 rounded-lg transform rotate-45 group-hover:rotate-50 transition-all duration-300 shadow-lg shadow-amber-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <div class="absolute inset-0 w-8 h-8 bg-amber-500 rounded-lg transform rotate-45 blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                            </div>
                             <span class="text-xl font-bold text-white">MiniCRM</span>
                         </div>
                         <p class="text-sm">Lightweight CRM for Malaysian SMEs</p>
@@ -299,6 +425,25 @@
 
 <script setup>
     import { ref } from "vue";
+    import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
+
+    useHead({
+        title: "Mini CRM",
+    });
+
+    const form = ref({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const handleSubmit = () => {
+        // Handle form submission
+        console.log("Form submitted:", form.value);
+        // Add your form submission logic here
+        alert("Thank you for your message! We will get back to you soon.");
+        form.value = { name: "", email: "", message: "" };
+    };
 
     const mobileMenuOpen = ref(false);
 </script>
