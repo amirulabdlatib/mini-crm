@@ -9,19 +9,19 @@ Includes essential CRM modules: Users, Roles, Products, Leads, Clients, Deals (P
 
 ### 1. User & Role Management
 
-[ ] User login/logout
-[ ] Roles: Admin, Salesperson, Sales Manager
-[ ] Admin manages all modules
-[ ] Salesperson sees only their own leads & deals
-[ ] User CRUD (Admin only)
-[ ] User profile page
+- [ ] User login/logout
+- [ ] Roles: Admin, Salesperson, Sales Manager
+- [ ] Admin manages all modules
+- [ ] Salesperson sees only their own leads & deals
+- [ ] User CRUD (Admin only)
+- [ ] User profile page
 
 ### 2. Product / Catalogue Management
 
-[ ] Product list
-[ ] Add / edit / delete product
-[ ] Product fields: name, price, description
-[ ] Products can be added to Deals (deal_items)
+- [ ] Product list
+- [ ] Add / edit / delete product
+- [ ] Product fields: name, price, description
+- [ ] Products can be added to Deals (deal_items)
 
 ### 3. Leads Management
 
@@ -41,13 +41,13 @@ Includes essential CRM modules: Users, Roles, Products, Leads, Clients, Deals (P
 
 ### 5. Deals (Sales Pipeline)
 
-[ ] Create new deal (attached to a client)
-[ ] Deal stages: New → Contacted → Meeting → Proposal → Negotiation → Won/Lost
-[ ] Kanban pipeline board
-[ ] Deal details page
-[ ] Deal activity logs
-[ ] Add products to a deal
-[ ] Auto-calculate deal value based on selected products
+- [ ] Create new deal (attached to a client)
+- [ ] Deal stages: New → Contacted → Meeting → Proposal → Negotiation → Won/Lost
+- [ ] Kanban pipeline board
+- [ ] Deal details page
+- [ ] Deal activity logs
+- [ ] Add products to a deal
+- [ ] Auto-calculate deal value based on selected products
 
 ### 6. Tasks (Follow-ups)
 
