@@ -115,7 +115,7 @@
             </div>
         </div>
 
-        <!-- Kanban Board -->
+        <!-- Kanban Board with Drag & Drop -->
         <div v-if="viewMode === 'kanban'" class="overflow-x-auto pb-4">
             <div class="flex space-x-4 min-w-max">
                 <!-- Stage Column -->
@@ -140,67 +140,81 @@
                         <p class="text-lg font-bold text-stone-900">{{ formatCurrency(getStageValue(stage.id)) }}</p>
                     </div>
 
-                    <!-- Deals Cards -->
-                    <div class="space-y-3 max-h-[600px] overflow-y-auto pr-1">
-                        <div v-for="deal in getStageDeals(stage.id)" :key="deal.id" @click="viewDeal(deal.id)" class="bg-white rounded-lg border border-stone-200 p-4 hover:shadow-md transition-all duration-200 cursor-pointer group">
-                            <!-- Deal Header -->
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex-1">
-                                    <h4 class="font-semibold text-stone-900 mb-1 group-hover:text-amber-600 transition-colors">
-                                        {{ deal.title }}
-                                    </h4>
-                                    <p class="text-sm text-stone-600">{{ deal.company }}</p>
+                    <!-- Draggable Deals Cards -->
+                    <draggable
+                        :list="getStageDeals(stage.id)"
+                        :animation="200"
+                        ghost-class="ghost-card"
+                        group="deals"
+                        @start="drag = true"
+                        @end="drag = false"
+                        @change="onDealMove($event, stage.id)"
+                        item-key="id"
+                        class="space-y-3 max-h-[600px] overflow-y-auto pr-1 min-h-[100px]">
+                        <template #item="{ element: deal }">
+                            <div @click="viewDeal(deal.id)" class="bg-white rounded-lg border border-stone-200 p-4 hover:shadow-md transition-all duration-200 cursor-move group">
+                                <!-- Deal Header -->
+                                <div class="flex items-start justify-between mb-3">
+                                    <div class="flex-1">
+                                        <h4 class="font-semibold text-stone-900 mb-1 group-hover:text-amber-600 transition-colors">
+                                            {{ deal.title }}
+                                        </h4>
+                                        <p class="text-sm text-stone-600">{{ deal.company }}</p>
+                                    </div>
+                                    <button @click.stop="toggleFavorite(deal.id)" class="p-1 hover:bg-stone-100 rounded transition-colors">
+                                        <Icon :name="deal.is_favorite ? 'lucide:star' : 'lucide:star'" :class="deal.is_favorite ? 'text-amber-500 fill-amber-500' : 'text-stone-400'" class="w-4 h-4" />
+                                    </button>
                                 </div>
-                                <button @click.stop="toggleFavorite(deal.id)" class="p-1 hover:bg-stone-100 rounded transition-colors">
-                                    <Icon :name="deal.is_favorite ? 'lucide:star' : 'lucide:star'" :class="deal.is_favorite ? 'text-amber-500 fill-amber-500' : 'text-stone-400'" class="w-4 h-4" />
-                                </button>
-                            </div>
 
-                            <!-- Deal Value -->
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-lg font-bold text-amber-600">{{ formatCurrency(deal.value) }}</span>
-                                <span :class="['px-2 py-1 text-xs font-medium rounded-full', getPriorityClass(deal.priority)]">
-                                    {{ deal.priority }}
-                                </span>
-                            </div>
+                                <!-- Deal Value -->
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-lg font-bold text-amber-600">{{ formatCurrency(deal.value) }}</span>
+                                    <span :class="['px-2 py-1 text-xs font-medium rounded-full', getPriorityClass(deal.priority)]">
+                                        {{ deal.priority }}
+                                    </span>
+                                </div>
 
-                            <!-- Deal Meta -->
-                            <div class="flex items-center justify-between text-xs text-stone-500">
-                                <div class="flex items-center space-x-1">
-                                    <Icon name="lucide:user" class="w-3 h-3" />
-                                    <span>{{ deal.owner }}</span>
+                                <!-- Deal Meta -->
+                                <div class="flex items-center justify-between text-xs text-stone-500">
+                                    <div class="flex items-center space-x-1">
+                                        <Icon name="lucide:user" class="w-3 h-3" />
+                                        <span>{{ deal.owner }}</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <Icon name="lucide:calendar" class="w-3 h-3" />
+                                        <span>{{ formatDate(deal.close_date) }}</span>
+                                    </div>
                                 </div>
-                                <div class="flex items-center space-x-1">
-                                    <Icon name="lucide:calendar" class="w-3 h-3" />
-                                    <span>{{ formatDate(deal.close_date) }}</span>
-                                </div>
-                            </div>
 
-                            <!-- Deal Progress -->
-                            <div class="mt-3 pt-3 border-t border-stone-100">
-                                <div class="flex items-center justify-between text-xs text-stone-600 mb-1">
-                                    <span>Progress</span>
-                                    <span>{{ deal.probability }}%</span>
+                                <!-- Deal Progress -->
+                                <div class="mt-3 pt-3 border-t border-stone-100">
+                                    <div class="flex items-center justify-between text-xs text-stone-600 mb-1">
+                                        <span>Progress</span>
+                                        <span>{{ deal.probability }}%</span>
+                                    </div>
+                                    <div class="w-full bg-stone-200 rounded-full h-1.5">
+                                        <div :style="{ width: `${deal.probability}%` }" class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full transition-all duration-300"></div>
+                                    </div>
                                 </div>
-                                <div class="w-full bg-stone-200 rounded-full h-1.5">
-                                    <div :style="{ width: `${deal.probability}%` }" class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full transition-all duration-300"></div>
-                                </div>
-                            </div>
 
-                            <!-- Deal Tags -->
-                            <div v-if="deal.tags && deal.tags.length > 0" class="flex flex-wrap gap-1 mt-3">
-                                <span v-for="tag in deal.tags" :key="tag" class="px-2 py-0.5 bg-stone-100 text-stone-600 text-xs rounded-full">
-                                    {{ tag }}
-                                </span>
+                                <!-- Deal Tags -->
+                                <div v-if="deal.tags && deal.tags.length > 0" class="flex flex-wrap gap-1 mt-3">
+                                    <span v-for="tag in deal.tags" :key="tag" class="px-2 py-0.5 bg-stone-100 text-stone-600 text-xs rounded-full">
+                                        {{ tag }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        </template>
 
                         <!-- Empty State -->
-                        <div v-if="getStageDeals(stage.id).length === 0" class="text-center py-8">
-                            <Icon name="lucide:inbox" class="w-12 h-12 text-stone-300 mx-auto mb-2" />
-                            <p class="text-sm text-stone-500">No deals in this stage</p>
-                        </div>
-                    </div>
+                        <template #footer>
+                            <div v-if="getStageDeals(stage.id).length === 0" class="text-center py-8">
+                                <Icon name="lucide:inbox" class="w-12 h-12 text-stone-300 mx-auto mb-2" />
+                                <p class="text-sm text-stone-500">No deals in this stage</p>
+                                <p class="text-xs text-stone-400 mt-1">Drag deals here</p>
+                            </div>
+                        </template>
+                    </draggable>
 
                     <!-- Add Deal Button -->
                     <button class="w-full mt-3 py-2 border-2 border-dashed border-stone-300 rounded-lg text-sm text-stone-600 hover:border-amber-500 hover:text-amber-600 transition-colors">
@@ -280,6 +294,8 @@
 </template>
 
 <script setup>
+    import draggable from "vuedraggable";
+
     useHead({
         title: "Sales Pipeline | Mini CRM",
     });
@@ -291,6 +307,7 @@
     // State
     const viewMode = ref("kanban");
     const showCreateDealModal = ref(false);
+    const drag = ref(false);
 
     // Pipeline Stages
     const pipelineStages = ref([
@@ -468,6 +485,38 @@
         }
     };
 
+    const onDealMove = (evt, newStageId) => {
+        // Handle deal moved to a new stage
+        if (evt.added) {
+            const movedDeal = evt.added.element;
+            const oldStage = movedDeal.stage;
+
+            // Update the deal's stage
+            const dealIndex = deals.value.findIndex((d) => d.id === movedDeal.id);
+            if (dealIndex !== -1) {
+                deals.value[dealIndex].stage = newStageId;
+
+                // Update probability based on stage
+                const probabilityMap = {
+                    new: 10,
+                    contacted: 25,
+                    meeting: 50,
+                    proposal: 65,
+                    negotiation: 80,
+                    won: 100,
+                    lost: 0,
+                };
+                deals.value[dealIndex].probability = probabilityMap[newStageId] || 50;
+
+                // Show notification (you can integrate with a toast notification library)
+                console.log(`Deal "${movedDeal.title}" moved from ${oldStage} to ${newStageId}`);
+
+                // Here you would typically make an API call to update the deal on the backend
+                // updateDealStage(movedDeal.id, newStageId);
+            }
+        }
+    };
+
     const viewDeal = (id) => {
         navigateTo(`/deals/${id}`);
     };
@@ -482,3 +531,35 @@
         }
     };
 </script>
+
+<style scoped>
+    /* Ghost card style when dragging */
+    .ghost-card {
+        opacity: 0.5;
+        background: #f59e0b;
+        border: 2px dashed #d97706;
+    }
+
+    /* Smooth transitions */
+    .draggable-item {
+        transition: transform 0.2s ease;
+    }
+
+    /* Custom scrollbar for deal columns */
+    .overflow-y-auto::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-thumb {
+        background: #d6d3d1;
+        border-radius: 3px;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+        background: #a8a29e;
+    }
+</style>
