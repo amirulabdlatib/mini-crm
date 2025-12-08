@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <!-- Rotated rounded square -->
+  <rect x="16" y="16" width="32" height="32" rx="4" fill="url(#logoGrad)" transform="rotate(45 32 32)"/>
+  <!-- Lightning bolt -->
+  <g transform="rotate(-45 32 32)">
+    <path d="M34 20 L26 32 L30 32 L28 44 L36 32 L32 32 Z" fill="white"/>
+  </g>
+</svg>

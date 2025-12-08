@@ -9,7 +9,11 @@ export default defineNuxtConfig({
         plugins: [tailwindcss()],
     },
     modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxtjs/google-fonts"],
-
+    app: {
+        head: {
+            link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+        },
+    },
     googleFonts: {
         families: {
             "Plus Jakarta Sans": [400, 500, 600, 700, 800],
