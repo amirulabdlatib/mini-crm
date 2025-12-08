@@ -1,5 +1,5 @@
 <template>
-    <aside :class="['fixed left-0 top-0 h-screen bg-white border-r border-stone-200 transition-all duration-300 ease-in-out z-40', isCollapsed ? 'w-20' : 'w-64']">
+    <aside :class="['fixed left-0 top-0 h-screen bg-white border-r border-stone-200 transition-all duration-300 ease-in-out z-40 flex flex-col', isCollapsed ? 'w-20' : 'w-64']">
         <!-- Logo Section -->
         <div class="h-16 flex items-center justify-between px-4 border-b border-stone-200">
             <NuxtLink to="/dashboard" class="flex items-center space-x-3 group">
@@ -12,7 +12,7 @@
                 </div>
                 <span v-show="!isCollapsed" class="text-xl font-bold bg-linear-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent"> MiniCRM </span>
             </NuxtLink>
-            <button class="p-2 rounded-lg hover:bg-stone-100 transition-colors duration-200 text-stone-600 hover:text-amber-600" @click="toggleSidebar">
+            <button @click="toggleSidebar" class="p-2 rounded-lg hover:bg-stone-100 transition-colors duration-200 text-stone-600 hover:text-amber-600">
                 <svg v-if="!isCollapsed" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
                 </svg>
@@ -23,8 +23,8 @@
         </div>
 
         <!-- Navigation Menu -->
-        <nav class="flex-1 overflow-y-auto py-6 px-3">
-            <div class="space-y-1">
+        <nav class="flex-1 overflow-y-auto py-6 px-3 pb-0">
+            <div class="space-y-1 pb-4">
                 <!-- Dashboard -->
                 <NuxtLink
                     to="/dashboard"
@@ -154,14 +154,14 @@
         </nav>
 
         <!-- User Profile Section -->
-        <div class="border-t border-stone-200 p-4">
+        <div class="border-t border-stone-200 p-4 mt-auto">
             <div :class="['flex items-center', isCollapsed ? 'justify-center' : 'space-x-3']">
-                <div class="w-10 h-10 rounded-full bg-linear-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-semibold shadow-lg">A</div>
+                <div class="w-10 h-10 rounded-full bg-linear-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white font-semibold shadow-lg shrink-0">A</div>
                 <div v-show="!isCollapsed" class="flex-1 min-w-0">
                     <p class="text-sm font-medium text-stone-900 truncate">Admin User</p>
                     <p class="text-xs text-stone-500 truncate">admin@minicrm.com</p>
                 </div>
-                <button v-show="!isCollapsed" class="p-2 rounded-lg hover:bg-stone-100 transition-colors duration-200 text-stone-400 hover:text-stone-600">
+                <button v-show="!isCollapsed" class="p-2 rounded-lg hover:bg-stone-100 transition-colors duration-200 text-stone-400 hover:text-stone-600 shrink-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
                     </svg>
