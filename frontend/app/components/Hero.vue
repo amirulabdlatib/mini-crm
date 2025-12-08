@@ -7,12 +7,12 @@
                     <div class="inline-block">
                         <span class="px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium"> Built for Malaysian SMEs </span>
                     </div>
-                    <h1 class="text-5xl lg:text-6xl font-bold text-stone-900 leading-tight">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-stone-900 leading-tight">
                         Manage your sales
                         <span class="text-amber-600 inline-block transform hover:rotate-2 transition-transform duration-300"> pipeline </span>
                         with clarity
                     </h1>
-                    <p class="text-xl text-stone-600 leading-relaxed">A lightweight CRM that helps small teams track leads, manage deals, and close sales faster. No bloat, just what you need.</p>
+                    <p class="text-lg text-stone-600 leading-relaxed">A lightweight CRM that helps small teams track leads, manage deals, and close sales faster. No bloat, just what you need.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <NuxtLink to="/register" class="group px-8 py-4 bg-amber-600 text-white rounded-xl font-semibold hover:bg-amber-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
                             Get Started for Free
