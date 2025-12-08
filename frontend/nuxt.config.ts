@@ -8,5 +8,14 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    modules: ["@nuxt/eslint", "@nuxt/icon"],
+    modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxtjs/google-fonts"],
+
+    googleFonts: {
+        families: {
+            "Plus Jakarta Sans": [400, 500, 600, 700, 800],
+            Inter: [400, 500, 600, 700],
+        },
+        display: "swap",
+        preload: true,
+    },
 });
