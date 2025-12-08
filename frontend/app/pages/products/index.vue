@@ -223,7 +223,6 @@
     });
 
     // State
-    const viewMode = ref("list");
     const showCreateProductModal = ref(false);
     const selectedProducts = ref([]);
     const searchQuery = ref("");
