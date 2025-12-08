@@ -1,7 +1,9 @@
 <template>
     <div class="min-h-screen">
-        <main>
+        <Navbar />
+        <main class="py-24">
             <slot />
         </main>
+        <Footer />
     </div>
 </template>
