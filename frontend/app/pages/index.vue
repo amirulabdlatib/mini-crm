@@ -1,8 +1,10 @@
 <template>
-    <Hero />
-    <Features />
-    <Testimonials />
-    <ContactUs />
+    <div>
+        <Hero />
+        <Features />
+        <Testimonials />
+        <ContactUs />
+    </div>
 </template>
 
 <script setup>

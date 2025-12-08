@@ -43,7 +43,7 @@
                 </div>
 
                 <!-- Mobile Hamburger Button -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-stone-900 hover:text-amber-600 focus:outline-none transition-colors duration-200">
+                <button class="md:hidden p-2 text-stone-900 hover:text-amber-600 focus:outline-none transition-colors duration-200" @click="mobileMenuOpen = !mobileMenuOpen">
                     <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -62,9 +62,9 @@
                 leave-from-class="opacity-100 translate-y-0"
                 leave-to-class="opacity-0 -translate-y-4">
                 <div v-if="mobileMenuOpen" class="md:hidden py-4 space-y-3 border-t border-stone-200/50">
-                    <a @click="mobileMenuOpen = false" href="#features" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> Features </a>
-                    <a @click="mobileMenuOpen = false" href="#testimonials" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> Testimonials </a>
-                    <a @click="mobileMenuOpen = false" href="#contact" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200"> Contact </a>
+                    <a href="#features" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200" @click="mobileMenuOpen = false"> Features </a>
+                    <a href="#testimonials" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200" @click="mobileMenuOpen = false"> Testimonials </a>
+                    <a href="#contact" class="block px-4 py-2.5 text-sm font-medium text-stone-600 hover:text-amber-600 hover:bg-amber-50/50 rounded-lg transition-all duration-200" @click="mobileMenuOpen = false"> Contact </a>
                     <div class="pt-4 space-y-3 border-t border-stone-200/50">
                         <NuxtLink to="/login" class="w-full px-4 py-2.5 text-sm font-medium text-stone-700 hover:text-amber-600 hover:bg-stone-50 rounded-lg transition-all duration-200 text-center">Sign In</NuxtLink>
                         <NuxtLink

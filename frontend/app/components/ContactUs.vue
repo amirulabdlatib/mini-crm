@@ -9,13 +9,13 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Contact Form -->
                 <div class="bg-stone-50 p-8 rounded-2xl shadow-lg">
-                    <form @submit.prevent="handleSubmit" class="space-y-6">
+                    <form class="space-y-6" @submit.prevent="handleSubmit">
                         <div>
                             <label for="name" class="block text-sm font-medium text-stone-700 mb-1">Name</label>
                             <input
-                                type="text"
                                 id="name"
                                 v-model="form.name"
+                                type="text"
                                 required
                                 class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
                                 placeholder="Your name" />
@@ -23,9 +23,9 @@
                         <div>
                             <label for="email" class="block text-sm font-medium text-stone-700 mb-1">Email</label>
                             <input
-                                type="email"
                                 id="email"
                                 v-model="form.email"
+                                type="email"
                                 required
                                 class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
                                 placeholder="your.email@example.com" />

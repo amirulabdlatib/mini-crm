@@ -20,7 +20,7 @@
 
             <!-- Login Card -->
             <div class="bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 p-8">
-                <form @submit.prevent="handleLogin" class="space-y-6">
+                <form class="space-y-6" @submit.prevent="handleLogin">
                     <!-- Email Input -->
                     <div>
                         <label for="email" class="block text-sm font-medium text-stone-700 mb-2"> Email Address </label>
@@ -56,7 +56,7 @@
                                 required
                                 class="block w-full pl-10 pr-10 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
                                 placeholder="••••••••" />
-                            <button type="button" @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600" @click="showPassword = !showPassword">
                                 <svg v-if="!showPassword" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>

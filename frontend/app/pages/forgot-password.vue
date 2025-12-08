@@ -33,12 +33,12 @@
                             We sent a password reset link to
                             <span class="font-medium text-stone-900">{{ form.email }}</span>
                         </p>
-                        <button @click="resetForm" class="text-sm text-amber-600 hover:text-amber-700 font-medium transition-colors">Didn't receive the email? Click to resend</button>
+                        <button class="text-sm text-amber-600 hover:text-amber-700 font-medium transition-colors" @click="resetForm">Didn't receive the email? Click to resend</button>
                     </div>
                 </div>
 
                 <!-- Form -->
-                <form v-else @submit.prevent="handleForgotPassword" class="space-y-6">
+                <form v-else class="space-y-6" @submit.prevent="handleForgotPassword">
                     <!-- Email Input -->
                     <div>
                         <label for="email" class="block text-sm font-medium text-stone-700 mb-2"> Email Address </label>
