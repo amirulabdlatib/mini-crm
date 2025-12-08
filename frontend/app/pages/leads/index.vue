@@ -7,17 +7,17 @@
                 <p class="text-stone-600 mt-1">Manage and track your sales leads</p>
             </div>
             <div class="flex items-center space-x-3 shrink-0">
-                <button @click="showImportModal = true" class="px-4 py-2.5 border border-stone-300 text-stone-700 rounded-xl hover:bg-stone-50 transition-all duration-200 flex items-center space-x-2">
+                <button class="px-4 py-2.5 border border-stone-300 text-stone-700 rounded-xl hover:bg-stone-50 transition-all duration-200 flex items-center space-x-2" @click="showImportModal = true">
                     <Icon name="lucide:upload" class="w-4 h-4" />
                     <span>Import</span>
                 </button>
-                <button @click="exportLeads" class="px-4 py-2.5 border border-stone-300 text-stone-700 rounded-xl hover:bg-stone-50 transition-all duration-200 flex items-center space-x-2">
+                <button class="px-4 py-2.5 border border-stone-300 text-stone-700 rounded-xl hover:bg-stone-50 transition-all duration-200 flex items-center space-x-2" @click="exportLeads">
                     <Icon name="lucide:download" class="w-4 h-4" />
                     <span>Export</span>
                 </button>
                 <button
-                    @click="showCreateModal = true"
-                    class="px-6 py-2.5 bg-linear-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 flex items-center space-x-2">
+                    class="px-6 py-2.5 bg-linear-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 flex items-center space-x-2"
+                    @click="showCreateModal = true">
                     <Icon name="lucide:plus" class="w-4 h-4" />
                     <span>Add Lead</span>
                 </button>
@@ -119,7 +119,7 @@
             <!-- Table Header Actions -->
             <div class="px-6 py-4 border-b border-stone-200 flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <input type="checkbox" v-model="selectAll" @change="toggleSelectAll" class="w-4 h-4 text-amber-600 border-stone-300 rounded focus:ring-amber-500" />
+                    <input v-model="selectAll" type="checkbox" class="w-4 h-4 text-amber-600 border-stone-300 rounded focus:ring-amber-500" @change="toggleSelectAll" />
                     <span class="text-sm text-stone-600"> {{ selectedLeads.length }} selected </span>
                     <div v-if="selectedLeads.length > 0" class="flex items-center space-x-2">
                         <button class="px-3 py-1.5 text-xs font-medium text-stone-700 border border-stone-300 rounded-lg hover:bg-stone-50 transition-colors">Bulk Edit</button>
@@ -142,7 +142,7 @@
                     <thead class="bg-stone-50">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left">
-                                <input type="checkbox" v-model="selectAll" @change="toggleSelectAll" class="w-4 h-4 text-amber-600 border-stone-300 rounded focus:ring-amber-500" />
+                                <input v-model="selectAll" type="checkbox" class="w-4 h-4 text-amber-600 border-stone-300 rounded focus:ring-amber-500" @change="toggleSelectAll" />
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-stone-600 uppercase tracking-wider">Lead</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-stone-600 uppercase tracking-wider">Company</th>
@@ -156,7 +156,7 @@
                     <tbody class="bg-white divide-y divide-stone-200">
                         <tr v-for="lead in filteredLeads" :key="lead.id" class="hover:bg-stone-50 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <input type="checkbox" :value="lead.id" v-model="selectedLeads" class="w-4 h-4 text-amber-600 border-stone-300 rounded focus:ring-amber-500" />
+                                <input v-model="selectedLeads" type="checkbox" :value="lead.id" class="w-4 h-4 text-amber-600 border-stone-300 rounded focus:ring-amber-500" />
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
@@ -186,13 +186,13 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="flex items-center justify-end space-x-2">
-                                    <button @click="viewLead(lead.id)" class="text-amber-600 hover:text-amber-900 transition-colors">
+                                    <button class="text-amber-600 hover:text-amber-900 transition-colors" @click="viewLead(lead.id)">
                                         <Icon name="lucide:eye" class="w-5 h-5" />
                                     </button>
-                                    <button @click="editLead(lead.id)" class="text-stone-600 hover:text-stone-900 transition-colors">
+                                    <button class="text-stone-600 hover:text-stone-900 transition-colors" @click="editLead(lead.id)">
                                         <Icon name="lucide:pencil" class="w-5 h-5" />
                                     </button>
-                                    <button @click="deleteLead(lead.id)" class="text-red-600 hover:text-red-900 transition-colors">
+                                    <button class="text-red-600 hover:text-red-900 transition-colors" @click="deleteLead(lead.id)">
                                         <Icon name="lucide:trash-2" class="w-5 h-5" />
                                     </button>
                                 </div>

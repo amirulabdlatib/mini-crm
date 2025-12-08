@@ -11,9 +11,9 @@
                 <span v-show="!isCollapsed" class="text-xl font-bold bg-linear-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent"> MiniCRM </span>
             </NuxtLink>
             <button
-                @click="toggleSidebar"
                 class="p-2 rounded-lg hover:bg-stone-100 transition-all duration-200 text-stone-600 hover:text-amber-600 transform hover:scale-105"
-                :aria-label="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'">
+                :aria-label="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'"
+                @click="toggleSidebar">
                 <Icon name="lucide:chevron-left" class="w-5 h-5 transition-transform duration-300" :class="{ 'rotate-180': !isCollapsed }" />
             </button>
         </div>

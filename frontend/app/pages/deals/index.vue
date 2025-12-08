@@ -6,7 +6,7 @@
                 <h1 class="text-3xl font-bold text-stone-900">Sales Pipeline</h1>
                 <p class="text-stone-600 mt-1">Track deals through every stage from first contact to closed won</p>
             </div>
-            <div class="flex items-center space-x-3 flex-shrink-0">
+            <div class="flex items-center space-x-3 shrink-0">
                 <button class="px-4 py-2.5 border border-stone-300 text-stone-700 rounded-xl hover:bg-stone-50 transition-all duration-200 flex items-center space-x-2">
                     <Icon name="lucide:filter" class="w-4 h-4" />
                     <span>Filter</span>
@@ -16,8 +16,8 @@
                     <span>Export</span>
                 </button>
                 <button
-                    @click="showCreateDealModal = true"
-                    class="px-6 py-2.5 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 flex items-center space-x-2">
+                    class="px-6 py-2.5 bg-linear-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 flex items-center space-x-2"
+                    @click="showCreateDealModal = true">
                     <Icon name="lucide:plus" class="w-4 h-4" />
                     <span>Add Deal</span>
                 </button>
@@ -87,20 +87,17 @@
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <button
-                    @click="viewMode = 'kanban'"
                     :class="[
                         'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
                         viewMode === 'kanban' ? 'bg-amber-50 text-amber-600 border border-amber-200' : 'text-stone-600 hover:bg-stone-50 border border-transparent',
-                    ]">
+                    ]"
+                    @click="viewMode = 'kanban'">
                     <Icon name="lucide:columns" class="w-4 h-4 inline mr-2" />
                     Kanban
                 </button>
                 <button
-                    @click="viewMode = 'list'"
-                    :class="[
-                        'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-                        viewMode === 'list' ? 'bg-amber-50 text-amber-600 border border-amber-200' : 'text-stone-600 hover:bg-stone-50 border border-transparent',
-                    ]">
+                    :class="['px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200', viewMode === 'list' ? 'bg-amber-50 text-amber-600 border border-amber-200' : 'text-stone-600 hover:bg-stone-50 border border-transparent']"
+                    @click="viewMode = 'list'">
                     <Icon name="lucide:list" class="w-4 h-4 inline mr-2" />
                     List
                 </button>
@@ -119,7 +116,7 @@
         <div v-if="viewMode === 'kanban'" class="overflow-x-auto pb-4">
             <div class="flex space-x-4 min-w-max">
                 <!-- Stage Column -->
-                <div v-for="stage in pipelineStages" :key="stage.id" class="flex-shrink-0 w-80 bg-stone-50 rounded-xl p-4">
+                <div v-for="stage in pipelineStages" :key="stage.id" class="shrink-0 w-80 bg-stone-50 rounded-xl p-4">
                     <!-- Stage Header -->
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center space-x-2">
@@ -146,13 +143,13 @@
                         :animation="200"
                         ghost-class="ghost-card"
                         group="deals"
+                        item-key="id"
+                        class="space-y-3 max-h-[600px] overflow-y-auto pr-1 min-h-[100px]"
                         @start="drag = true"
                         @end="drag = false"
-                        @change="onDealMove($event, stage.id)"
-                        item-key="id"
-                        class="space-y-3 max-h-[600px] overflow-y-auto pr-1 min-h-[100px]">
+                        @change="onDealMove($event, stage.id)">
                         <template #item="{ element: deal }">
-                            <div @click="viewDeal(deal.id)" class="bg-white rounded-lg border border-stone-200 p-4 hover:shadow-md transition-all duration-200 cursor-move group">
+                            <div class="bg-white rounded-lg border border-stone-200 p-4 hover:shadow-md transition-all duration-200 cursor-move group" @click="viewDeal(deal.id)">
                                 <!-- Deal Header -->
                                 <div class="flex items-start justify-between mb-3">
                                     <div class="flex-1">
@@ -161,7 +158,7 @@
                                         </h4>
                                         <p class="text-sm text-stone-600">{{ deal.company }}</p>
                                     </div>
-                                    <button @click.stop="toggleFavorite(deal.id)" class="p-1 hover:bg-stone-100 rounded transition-colors">
+                                    <button class="p-1 hover:bg-stone-100 rounded transition-colors" @click.stop="toggleFavorite(deal.id)">
                                         <Icon :name="deal.is_favorite ? 'lucide:star' : 'lucide:star'" :class="deal.is_favorite ? 'text-amber-500 fill-amber-500' : 'text-stone-400'" class="w-4 h-4" />
                                     </button>
                                 </div>
@@ -193,7 +190,7 @@
                                         <span>{{ deal.probability }}%</span>
                                     </div>
                                     <div class="w-full bg-stone-200 rounded-full h-1.5">
-                                        <div :style="{ width: `${deal.probability}%` }" class="bg-gradient-to-r from-amber-500 to-orange-500 h-1.5 rounded-full transition-all duration-300"></div>
+                                        <div :style="{ width: `${deal.probability}%` }" class="bg-linear-to-r from-amber-500 to-orange-500 h-1.5 rounded-full transition-all duration-300"></div>
                                     </div>
                                 </div>
 
@@ -268,19 +265,19 @@
                                 <div class="flex items-center">
                                     <span class="text-sm font-medium text-stone-900 mr-2">{{ deal.probability }}%</span>
                                     <div class="w-16 bg-stone-200 rounded-full h-2">
-                                        <div :style="{ width: `${deal.probability}%` }" class="bg-gradient-to-r from-amber-500 to-orange-500 h-2 rounded-full"></div>
+                                        <div :style="{ width: `${deal.probability}%` }" class="bg-linear-to-r from-amber-500 to-orange-500 h-2 rounded-full"></div>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="flex items-center justify-end space-x-2">
-                                    <button @click="viewDeal(deal.id)" class="text-amber-600 hover:text-amber-900 transition-colors">
+                                    <button class="text-amber-600 hover:text-amber-900 transition-colors" @click="viewDeal(deal.id)">
                                         <Icon name="lucide:eye" class="w-5 h-5" />
                                     </button>
-                                    <button @click="editDeal(deal.id)" class="text-stone-600 hover:text-stone-900 transition-colors">
+                                    <button class="text-stone-600 hover:text-stone-900 transition-colors" @click="editDeal(deal.id)">
                                         <Icon name="lucide:pencil" class="w-5 h-5" />
                                     </button>
-                                    <button @click="deleteDeal(deal.id)" class="text-red-600 hover:text-red-900 transition-colors">
+                                    <button class="text-red-600 hover:text-red-900 transition-colors" @click="deleteDeal(deal.id)">
                                         <Icon name="lucide:trash-2" class="w-5 h-5" />
                                     </button>
                                 </div>
