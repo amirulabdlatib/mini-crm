@@ -131,19 +131,19 @@
                                 </div>
                             </div>
                             <div class="py-2">
-                                <NuxtLink to="/profile" class="flex items-center px-4 py-2.5 text-sm text-stone-700 hover:bg-stone-50 transition-colors">
+                                <NuxtLink to="/profile" class="flex items-center px-4 py-2.5 text-sm text-stone-700 hover:bg-stone-50 transition-colors space-x-2">
                                     <Icon name="lucide:user" class="w-4 h-4 text-stone-400" />
-                                    Profile
+                                    <span>Profile</span>
                                 </NuxtLink>
-                                <NuxtLink to="/settings" class="flex items-center px-4 py-2.5 text-sm text-stone-700 hover:bg-stone-50 transition-colors">
+                                <NuxtLink to="/settings" class="flex items-center px-4 py-2.5 text-sm text-stone-700 hover:bg-stone-50 transition-colors space-x-2">
                                     <Icon name="lucide:settings" class="w-4 h-4 text-stone-400" />
-                                    Settings
+                                    <span>Settings</span>
                                 </NuxtLink>
                             </div>
                             <div class="border-t border-stone-200 py-2">
-                                <button class="flex items-center w-full px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors" @click="handleLogout">
+                                <button class="flex items-center w-full px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors space-x-2" @click="handleLogout">
                                     <Icon name="lucide:log-out" class="w-4 h-4 text-stone-400" />
-                                    Logout
+                                    <span>Logout</span>
                                 </button>
                             </div>
                         </div>
