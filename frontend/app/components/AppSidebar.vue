@@ -12,12 +12,12 @@
                 </div>
                 <span v-show="!isCollapsed" class="text-xl font-bold bg-linear-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent"> MiniCRM </span>
             </NuxtLink>
-            <button @click="toggleSidebar" class="p-2 rounded-lg hover:bg-stone-100 transition-colors duration-200 text-stone-600 hover:text-amber-600">
-                <svg v-if="!isCollapsed" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
-                </svg>
-                <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+            <button
+                @click="toggleSidebar"
+                class="p-2 rounded-lg hover:bg-stone-100 transition-all duration-200 text-stone-600 hover:text-amber-600 transform hover:scale-105"
+                :aria-label="isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'">
+                <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" :class="{ 'rotate-180': !isCollapsed }">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
         </div>
