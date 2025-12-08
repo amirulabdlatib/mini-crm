@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxtjs/google-fonts", "nuxt-echarts"],
+    modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxtjs/google-fonts", "nuxt-echarts", "@pinia/nuxt", "pinia-plugin-persistedstate"],
     app: {
         head: {
             link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
