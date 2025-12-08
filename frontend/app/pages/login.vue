@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen bg-linear-to-br from-stone-50 via-amber-50/30 to-orange-50/20 flex items-center justify-center p-4">
+    <div class="bg-linear-to-br from-stone-50 via-amber-50/30 to-orange-50/20 py-32">
         <!-- Background decorative elements -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute top-20 left-10 w-72 h-72 bg-amber-200/30 rounded-full blur-3xl"></div>

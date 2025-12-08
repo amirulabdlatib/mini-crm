@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen">
         <Navbar />
-        <main class="py-24">
+        <main>
             <slot />
         </main>
         <Footer />

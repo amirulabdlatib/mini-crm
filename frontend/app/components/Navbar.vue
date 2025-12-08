@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3 group cursor-pointer">
+                <NuxtLink to="/" class="flex items-center space-x-3 group">
                     <div class="relative">
                         <div class="w-9 h-9 bg-linear-to-br from-amber-500 to-orange-600 rounded-xl transform rotate-45 group-hover:rotate-50 transition-all duration-300 shadow-lg shadow-amber-500/20 flex items-center justify-center">
                             <svg class="w-5 h-5 text-white transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -13,7 +13,7 @@
                         <div class="absolute inset-0 w-9 h-9 bg-linear-to-br from-amber-400 to-orange-500 rounded-xl transform rotate-45 blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
                     </div>
                     <span class="text-xl font-bold bg-linear-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent">MiniCRM</span>
-                </div>
+                </NuxtLink>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-1">
