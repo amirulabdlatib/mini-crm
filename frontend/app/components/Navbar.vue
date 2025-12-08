@@ -5,7 +5,7 @@
                 <!-- Logo -->
                 <NuxtLink to="/" class="flex items-center space-x-3 group">
                     <div class="relative">
-                        <div class="w-9 h-9 bg-linear-to-br from-amber-500 to-orange-600 rounded-xl transform rotate-45 group-hover:rotate-50 transition-all duration-300 shadow-lg shadow-amber-500/20 flex items-center justify-center">
+                        <div class="w-9 h-9 bg-linear-to-br from-amber-500 to-orange-600 rounded-xl transform rotate-45 group-hover:rotate-60 transition-all duration-300 shadow-lg shadow-amber-500/20 flex items-center justify-center">
                             <svg class="w-5 h-5 text-white transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
