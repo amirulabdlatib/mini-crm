@@ -91,7 +91,7 @@
 
 <script setup>
     useHead({
-        title: "Mini CRM | Forgot Password",
+        title: "Forgot Password | Mini CRM ",
     });
 
     definePageMeta({
