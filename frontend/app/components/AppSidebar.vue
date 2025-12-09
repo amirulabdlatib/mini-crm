@@ -114,6 +114,17 @@
                     <Icon name="lucide:shield" class="w-5 h-5 shrink-0" />
                     <span v-show="!isCollapsed" class="ml-3 font-medium">Roles</span>
                 </NuxtLink>
+
+                <!-- Permissions -->
+                <NuxtLink
+                    to="/permissions"
+                    :class="[
+                        'flex items-center px-3 py-2.5 rounded-lg transition-all duration-200 group',
+                        isActive('/permissions') ? 'bg-linear-to-r from-amber-50 to-orange-50 text-amber-600 shadow-sm' : 'text-stone-600 hover:bg-stone-50 hover:text-amber-600',
+                    ]">
+                    <Icon name="lucide:lock-keyhole" class="w-5 h-5 shrink-0" />
+                    <span v-show="!isCollapsed" class="ml-3 font-medium">Permissions</span>
+                </NuxtLink>
             </div>
         </nav>
 
