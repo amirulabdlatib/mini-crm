@@ -135,10 +135,6 @@
                                     <Icon name="lucide:user" class="w-4 h-4 text-stone-400" />
                                     <span>Profile</span>
                                 </NuxtLink>
-                                <NuxtLink to="/settings" class="flex items-center px-4 py-2.5 text-sm text-stone-700 hover:bg-stone-50 transition-colors space-x-2">
-                                    <Icon name="lucide:settings" class="w-4 h-4 text-stone-400" />
-                                    <span>Settings</span>
-                                </NuxtLink>
                             </div>
                             <div class="border-t border-stone-200 py-2">
                                 <button class="flex items-center w-full px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors space-x-2" @click="handleLogout">
