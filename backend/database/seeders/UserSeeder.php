@@ -29,12 +29,27 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
-        $salesperson = User::create([
-            'name' => 'Sales Person',
+        $salesperson1 = User::create([
+            'name' => 'Sales Person 1',
             'email' => "salesperson@crm.com",
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ]);
+
+        $salesperson2 = User::create([
+            'name' => 'Sales Person 2',
+            'email' => "salesperson2@crm.com",
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+        ]);
+
+        $salesperson3 = User::create([
+            'name' => 'Sales Person 3',
+            'email' => "salesperson3@crm.com",
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+        ]);
+
 
         $adminRole = Role::where('name', 'Admin')->pluck('id');
         $admin->roles()->sync($adminRole);
@@ -43,6 +58,9 @@ class UserSeeder extends Seeder
         $manager->roles()->sync($managerRole);
 
         $salespersonRole = Role::where('name', 'Sales Person')->pluck('id');
-        $salesperson->roles()->sync($salespersonRole);
+
+        $salesperson1->roles()->sync($salespersonRole);
+        $salesperson2->roles()->sync($salespersonRole);
+        $salesperson3->roles()->sync($salespersonRole);
     }
 }
