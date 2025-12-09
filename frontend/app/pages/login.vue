@@ -34,7 +34,7 @@
                                 id="email"
                                 v-model="form.email"
                                 type="email"
-                                `class="block w-full pl-10 pr-3 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                                class="block w-full pl-10 pr-3 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
                                 placeholder="you@example.com" />
                         </div>
                     </div>
@@ -52,7 +52,6 @@
                                 id="password"
                                 v-model="form.password"
                                 :type="showPassword ? 'text' : 'password'"
-                                `
                                 class="block w-full pl-10 pr-10 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
                                 placeholder="••••••••" />
                             <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600" @click="showPassword = !showPassword">
