@@ -34,8 +34,7 @@
                                 id="email"
                                 v-model="form.email"
                                 type="email"
-                                required
-                                class="block w-full pl-10 pr-3 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
+                                `class="block w-full pl-10 pr-3 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
                                 placeholder="you@example.com" />
                         </div>
                     </div>
@@ -53,7 +52,7 @@
                                 id="password"
                                 v-model="form.password"
                                 :type="showPassword ? 'text' : 'password'"
-                                required
+                                `
                                 class="block w-full pl-10 pr-10 py-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm"
                                 placeholder="••••••••" />
                             <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600" @click="showPassword = !showPassword">
@@ -154,15 +153,18 @@
 
     const showPassword = ref(false);
     const loading = ref(false);
+    const toast = useToast();
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     const handleLogin = async () => {
         loading.value = true;
 
-        // Simulate API call
-        setTimeout(() => {
-            console.log("Login:", form.value);
-            loading.value = false;
-            // Add your authentication logic here
-        }, 1500);
+        await sleep(1500);
+
+        console.log("Login:", form.value);
+        loading.value = false;
+
+        toast.success("Login successfully. Welcome to Mini CRM");
+        navigateTo("/dashboard");
     };
 </script>
